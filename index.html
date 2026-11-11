@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Perjalanan Hidup Saya - Yigal Amiel Benggu</title>
+  <link href="https://jsdelivr.net" rel="stylesheet">
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <style>
+    body{background:#d7ccc8;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#4e342e}
+    .siakad-header{background:linear-gradient(135deg,#5d4037,#4e342e);color:#fff;padding:30px 20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+    .header-logo{width:90px;height:90px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;border:4px solid #ffcc80;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+    .header-title{font-size:1.1rem;font-weight:600;letter-spacing:.5px;line-height:1.4}
+    .btn-header-action{background:rgba(255,255,255,.1);border:none;color:#fff;padding:12px;border-radius:10px;font-size:.9rem;backdrop-filter:blur(5px);transition:all .2s;width:100%;display:flex;flex-direction:column;align-items:center}
+    .btn-header-action:hover{background:rgba(255,255,255,.2);color:#fff}
+    .section-title{font-size:1.4rem;font-weight:700;color:#3e2723;margin:25px 0 15px}
+    .modul-card{background:#fff;border-radius:15px;padding:25px 20px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s;cursor:pointer;display:block;color:inherit;height:100%;border-bottom:5px solid var(--ac,#8d6e63)}
+    .modul-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+    .modul-icon{font-size:2.5rem;margin-bottom:12px}
+    .modul-name{font-size:1.05rem;font-weight:600;color:#4e342e}
+    .modul-desc{font-size:.8rem;color:#8d6e63;margin-top:4px}
+    .modal-content{border-radius:20px;border:none;background:#fdfbfa}
+    .modal-header{background:#5d4037;color:#fff;border-top-left-radius:20px;border-top-right-radius:20px}
+    .btn-close-white{filter:invert(1) grayscale(100%) brightness(200%)}
+    .foto-profil{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .foto-besar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #8d6e63;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+    .card-cover{width:100%;height:120px;display:block;border-radius:10px;margin-bottom:14px}
+    .modal-banner{height:130px;position:relative;overflow:hidden}
+    .modal-banner svg{position:absolute;inset:0;width:100%;height:100%}
+    .list-group-item{background:transparent;color:#4e342e}
+    .tag{display:inline-block;background:#efebe9;color:#4e342e;border-radius:20px;padding:4px 12px;margin:3px;font-size:.85rem}
+    .nama-besar{font-size:2rem;font-weight:800;color:#fff;letter-spacing:.5px;margin:6px 0 2px;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+    .sub-nama{color:#ffcc80;font-weight:600;font-size:.95rem}
+    .chip{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:20px;padding:5px 14px;margin:3px;font-size:.8rem}
+    .container{max-width:1100px}
+    .banner-nama{position:absolute;left:0;right:0;bottom:0;padding:18px 14px 8px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:.8rem;font-weight:600;text-align:center;letter-spacing:.4px}
+    .profil-cover{height:120px;background:linear-gradient(135deg,#8d6e63,#3e2723);position:relative}
+    .profil-foto-wrap{margin-top:-65px;text-align:center}
+    .profil-foto-wrap .foto-besar{width:130px;height:130px;border:5px solid #fff}
+    .stat{background:#efebe9;border-radius:12px;padding:10px 4px;text-align:center}
+    .stat b{display:block;font-size:1.1rem;color:#5d4037}
+    .stat span{font-size:.7rem;color:#8d6e63}
+    .info-row{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #efebe9;font-size:.88rem}
+    .info-row i{width:22px;color:#8d6e63;margin-top:3px;text-align:center}
+    .info-row small{display:block;color:#8d6e63;font-size:.7rem;text-transform:uppercase;letter-spacing:.5px}
+    @media(min-width:768px){.nama-besar{font-size:2.6rem}}
+  </style>
+  <script>
+    const AVATAR = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://w3.org" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffcc80"/><stop offset="1" stop-color="#8d6e63"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><circle cx="100" cy="78" r="38" fill="#fff3e0"/><path d="M60 74c0-30 20-44 42-44s38 14 38 40c-8-14-22-20-40-20s-30 8-40 24z" fill="#4e342e"/><path d="M28 200c4-46 34-70 72-70s68 24 72 70z" fill="#5d4037"/><path d="M84 134l16 22 16-22z" fill="#fff3e0"/><circle cx="87" cy="80" r="4" fill="#4e342e"/><circle cx="113" cy="80" r="4" fill="#4e342e"/><path d="M88 95q12 10 24 0" stroke="#8d6e63" stroke-width="4" fill="none" stroke-linecap="round"/></svg>');
+    function pasangFoto() {
+      document.querySelectorAll('img.foto').forEach(i => {
+        i.onerror = function() { this.onerror = null; this.src = AVATAR; };
+        i.src = 'foto-saya.jpg';
+      });
+    }
+    document.addEventListener('DOMContentLoaded', pasangFoto);
+  </script>
+</head>
+<body>
+
+  <!-- SVG TEMPLATES -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sc-biodata" viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg-biodata" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a1887f"/><stop offset="1" stop-color="#4e342e"/></linearGradient></defs><rect width="400" height="140" fill="url(#bg-biodata)"/><circle cx="40" cy="20" r="60" fill="#fff" opacity=".1"/><circle cx="380" cy="130" r="70" fill="#fff" opacity=".1"/><rect x="110" y="25" width="180" height="95" rx="12" fill="#fff8f0"/><circle cx="150" cy="62" r="20" fill="#8d6e63"/><circle cx="150" cy="56" r="8" fill="#ffe0b2"/><path d="M134 80q16-14 32 0v8h-32z" fill="#ffe0b2"/><rect x="185" y="48" width="90" height="8" rx="4" fill="#bcaaa4"/><rect x="185" y="66" width="70" height="8" rx="4" fill="#d7ccc8"/><rect x="185" y="84" width="80" height="8" rx="4" fill="#d7ccc8"/><rect x="130" y="100" width="140" height="6" rx="3" fill="#ffcc80"/></symbol>
+    <symbol id="sc-keseharian" viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg-keseharian" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb74d"/><stop offset="1" stop-color="#6d4c41"/></linearGradient></defs><rect width="400" height="140" fill="url(#bg-keseharian)"/><circle cx="40" cy="20" r="60" fill="#fff" opacity=".1"/><circle cx="310" cy="45" r="26" fill="#fff59d"/><path d="M0 140V105q60-40 120-10t130-5 150 20v30z" fill="#5d4037" opacity=".85"/><circle cx="130" cy="62" r="34" fill="#fff8f0"/><circle cx="130" cy="62" r="30" fill="none" stroke="#8d6e63" stroke-width="4"/><path d="M130 62V42M130 62l14 8" stroke="#4e342e" stroke-width="4" stroke-linecap="round"/></symbol>
+    <symbol id="sc-hobi" viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg-hobi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4db6ac"/><stop offset="1" stop-color="#004d40"/></linearGradient></defs><rect width="400" height="140" fill="url(#bg-hobi)"/><circle cx="380" cy="130" r="70" fill="#fff" opacity=".1"/><rect x="120" y="42" width="160" height="62" rx="31" fill="#263238"/><rect x="146" y="64" width="30" height="9" rx="3" fill="#80cbc4"/><rect x="157" y="53" width="9" height="30" rx="3" fill="#80cbc4"/><circle cx="238" cy="60" r="8" fill="#ff8a65"/><circle cx="256" cy="74" r="8" fill="#ffd54f"/><circle cx="220" cy="74" r="8" fill="#81d4fa"/><path d="M300 30l4 9 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill="#fff59d"/></symbol>
+    <symbol id="sc-cita" viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg-cita" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a65"/><stop offset="1" stop-color="#4a148c"/></linearGradient></defs><rect width="400" height="140" fill="url(#bg-cita)"/><circle cx="60" cy="30" r="2.5" fill="#fff"/><circle cx="120" cy="18" r="2" fill="#fff"/><circle cx="330" cy="28" r="3" fill="#fff"/><path d="M0 140v-25q70-25 140 0t140-5 120 10v20z" fill="#3e2723"/><g transform="rotate(35 200 70)"><path d="M200 18c18 18 22 50 14 72h-28c-8-22-4-54 14-72z" fill="#fff8f0"/><circle cx="200" cy="55" r="8" fill="#4fc3f7"/><path d="M186 90l-14 18 16-6zM214 90l14 18-16-6z" fill="#e64a19"/><path d="M192 94h16l-8 28z" fill="#ffca28"/></g></symbol>
+    <symbol id="sc-organisasi" viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg-organisasi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7986cb"/><stop offset="1" stop-color="#1a237e"/></linearGradient></defs><rect width="400" height="140" fill="url(#bg-organisasi)"/><circle cx="40" cy="20" r="60" fill="#fff" opacity=".1"/><circle cx="380" cy="130" r="70" fill="#fff" opacity=".1"/><path d="M200 60L130 100M200 60L270 100M130 100H270" stroke="#fff8e1" stroke-width="4"/><circle cx="200" cy="50" r="22" fill="#ffca28"/><circle cx="130" cy="100" r="18" fill="#fff8f0"/><circle cx="270" cy="100" r="18" fill="#fff8f0"/></symbol>
